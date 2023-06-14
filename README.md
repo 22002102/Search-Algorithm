@@ -19,31 +19,103 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+''' 
+Program for linear search method to match the item in a list
+Developed by: SANJAY S
+RegisterNumber: 212222230132
+'''
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if(array[i]==k):
+            return i
+    return -1
+array = eval(input())
+k = eval(input())
+n=len(array)
+array.sort()
+result = linearSearch(array,n,k)
+if(result == -1):
+    print(array,"\nElement not found")
+else:
+    print(array,"\nElement found at index: ",result)
 
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
+Developed by: SANJAY S
+RegisterNumber: 212222230132
 
-
+def binarySearchIter(array, k, low, high):
+    while low<=high:
+        mid=low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array = eval(input())
+array.sort()
+k = eval(input())
+result=binarySearchIter(array,k,0,len(array)-1)
+if(result==-1):
+    print(array,"\nElement not found")
+else:
+    print(array,"\nElement found at index: ",result)
 
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
+Developed by: SANJAY S
+RegisterNumber: 212222230132
 
-
-
+ef BinarySearch(arr, k, low, high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k = eval(input())
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result==-1):
+    print(arr,"\nElement not found")
+else:
+    print(arr,"\nElement found at index: ",result)
 
 
 ```
 ## Sample Input and Output
+Linear Search:
 
 
 
 
+![image](https://github.com/22002102/Search-Algorithm/assets/119091638/2b4473fe-5c87-4a8f-9d30-6c60ac07445b)
+
+Binary Search:
+
+
+
+![image](https://github.com/22002102/Search-Algorithm/assets/119091638/e53ec2ea-f27c-47e7-90e8-fdb1c7191329)
+
+
+Binary Search (recursive method):
+
+
+
+![image](https://github.com/22002102/Search-Algorithm/assets/119091638/113e9e85-d5b6-483b-b3cd-2c6155beb1d1)
 
 
 ## Result
